@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@app/*": ["./src/*"],
+      "tw": ["./tailwind.js"],
+      "@testing-library": ["./testing-library.config.js"],
+    }
+  },
+  "exclude": ["node_modules"]
+}
