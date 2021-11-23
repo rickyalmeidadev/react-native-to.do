@@ -17,6 +17,7 @@ module.exports = {
         },
       },
       fontSize: {
+        caption: [6, 0],
         xs: [12, 0],
         sm: [14, 0],
         base: [16, 0],
