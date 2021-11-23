@@ -1,4 +1,5 @@
 module.exports = {
+  mode: 'jit',
   purge: ['./src/**/*.{js,ts,jsx,tsx}'],
   darkMode: false,
   theme: {
@@ -10,6 +11,10 @@ module.exports = {
         dark: '#B2B2B2',
         light: '#EBEBEB',
         white: '#FFFFFF',
+        gradient: {
+          from: 'rgba(196, 196, 196, 0.24)',
+          to: 'rgba(196, 196, 196, 0)',
+        },
       },
       fontSize: {
         xs: [12, 0],
