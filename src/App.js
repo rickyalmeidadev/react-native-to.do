@@ -1,6 +1,6 @@
 import {View} from 'react-native';
 import tw, {withDeviceContext} from 'tw';
-import {Header, TodoInput, TodosList} from './components';
+import {Header, TodoInput, TodosList} from '@app/components';
 
 const App = () => (
   <View style={tw`flex-1 bg-light`}>
