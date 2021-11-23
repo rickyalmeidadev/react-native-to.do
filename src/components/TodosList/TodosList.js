@@ -5,7 +5,7 @@ import tw from 'tw';
 import {useTodos} from '@app/hooks';
 
 const colors = [tw`text-gradient-from`.color, tw`text-gradient-to`.color];
-const style = tw`flex-row px-6 py-4 justify-between items-center`;
+const style = tw`h-12 flex-row justify-between items-center`;
 const wrappers = {
   even: ({children}) => (
     <LinearGradient
@@ -49,7 +49,7 @@ const TodosList = () => {
         return (
           <Wrapper>
             <TouchableOpacity
-              style={tw`flex-1 flex-row items-center`}
+              style={tw`h-full px-6 flex-1 flex-row items-center`}
               onPress={onToggle(item.id)}
             >
               <View
@@ -75,7 +75,10 @@ const TodosList = () => {
                 {item.text}
               </Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={onDelete(item.id)}>
+            <TouchableOpacity
+              style={tw`h-full px-6 justify-center items-center`}
+              onPress={onDelete(item.id)}
+            >
               <Icon name="trash-2" color={tw`text-dark`.color} size={20} />
             </TouchableOpacity>
           </Wrapper>
