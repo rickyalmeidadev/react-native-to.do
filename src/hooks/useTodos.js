@@ -1,11 +1,13 @@
-import {createContext, useCallback, useContext, useState} from 'react';
+import {createContext, useCallback, useContext, useMemo, useState} from 'react';
+import {v4 as uuid} from 'uuid';
 
 const TodosContext = createContext();
 
 export const TodosProvider = ({children}) => {
   const [todos, setTodos] = useState([]);
 
-  const createTodo = useCallback(todo => {
+  const createTodo = useCallback(text => {
+    const todo = {id: uuid(), text, completed: false};
     setTodos(prevTodos => [...prevTodos, todo]);
   }, []);
 
@@ -13,8 +15,20 @@ export const TodosProvider = ({children}) => {
     setTodos(prevTodos => prevTodos.filter(todo => todo.id !== id));
   }, []);
 
+  const toggleTodo = useCallback(id => {
+    setTodos(prevTodos =>
+      prevTodos.map(todo =>
+        todo.id === id ? {...todo, completed: !todo.completed} : todo,
+      ),
+    );
+  }, []);
+
+  const total = useMemo(() => todos.length, [todos]);
+
   return (
-    <TodosContext.Provider value={{todos, createTodo, deleteTodo}}>
+    <TodosContext.Provider
+      value={{createTodo, deleteTodo, todos, toggleTodo, total}}
+    >
       {children}
     </TodosContext.Provider>
   );
