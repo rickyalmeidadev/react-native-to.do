@@ -12,6 +12,8 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		1B7BBE67C4454D2AF6FD7FC6 /* libPods-todo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E262F933E65306187FC9264 /* libPods-todo.a */; };
+		379D412C274C7BB9008056D6 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 379D412B274C7BB9008056D6 /* Feather.ttf */; };
+		379D412D274C7BB9008056D6 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 379D412B274C7BB9008056D6 /* Feather.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		915F7E43172F4890CD2886B9 /* libPods-todo-todoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77A1E47903426CB2424B5CB6 /* libPods-todo-todoTests.a */; };
 /* End PBXBuildFile section */
@@ -39,6 +41,7 @@
 		1D7E8F8E1E7CAAC91004FFED /* Pods-todo-todoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-todo-todoTests.debug.xcconfig"; path = "Target Support Files/Pods-todo-todoTests/Pods-todo-todoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		272B2B06167CE1096CD74FF3 /* Pods-todo-todoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-todo-todoTests.release.xcconfig"; path = "Target Support Files/Pods-todo-todoTests/Pods-todo-todoTests.release.xcconfig"; sourceTree = "<group>"; };
 		2F2B5ABFDEEF78A6841D73D7 /* Pods-todo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-todo.release.xcconfig"; path = "Target Support Files/Pods-todo/Pods-todo.release.xcconfig"; sourceTree = "<group>"; };
+		379D412B274C7BB9008056D6 /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		6E262F933E65306187FC9264 /* libPods-todo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-todo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77A1E47903426CB2424B5CB6 /* libPods-todo-todoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-todo-todoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = todo/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -114,7 +117,6 @@
 				1D7E8F8E1E7CAAC91004FFED /* Pods-todo-todoTests.debug.xcconfig */,
 				272B2B06167CE1096CD74FF3 /* Pods-todo-todoTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -128,6 +130,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				379D412B274C7BB9008056D6 /* Feather.ttf */,
 				13B07FAE1A68108700A75B9A /* todo */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* todoTests */,
@@ -234,6 +237,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				379D412D274C7BB9008056D6 /* Feather.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +247,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				379D412C274C7BB9008056D6 /* Feather.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

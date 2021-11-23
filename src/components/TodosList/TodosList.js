@@ -1,5 +1,6 @@
 import {FlatList, Text, TouchableOpacity, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import Icon from 'react-native-vector-icons/Feather';
 import tw from 'tw';
 
 const todos = [
@@ -9,7 +10,7 @@ const todos = [
   {id: 4, text: 'Learn Kotlin', completed: false},
 ];
 const colors = [tw`text-gradient-from`.color, tw`text-gradient-to`.color];
-const style = tw`flex-row px-6 py-4 items-center`;
+const style = tw`flex-row px-6 py-4 justify-between items-center`;
 const wrappers = {
   even: ({children}) => (
     <LinearGradient
@@ -33,22 +34,30 @@ const TodosList = () => (
       const Wrapper = wrappers[index % 2 === 0 ? 'even' : 'odd'];
       return (
         <Wrapper>
-          <View
-            style={[
-              tw`w-4 h-4 rounded border border-dark`,
-              item.completed ? tw`bg-success border-success` : tw`border-dark`,
-            ]}
-          />
-          <Text
-            style={[
-              tw`flex-1 ml-4 font-medium`,
-              item.completed ? tw`text-success line-through` : tw`text-black`,
-            ]}
-          >
-            {item.text}
-          </Text>
+          <TouchableOpacity style={tw`flex-1 flex-row items-center`}>
+            <View
+              style={[
+                tw`justify-center items-center w-4 h-4 rounded border border-dark`,
+                item.completed
+                  ? tw`bg-success border-success`
+                  : tw`border-dark`,
+              ]}
+            >
+              {item.completed && (
+                <Icon name="check" color={tw`text-white`.color} size={14} />
+              )}
+            </View>
+            <Text
+              style={[
+                tw`ml-4 font-medium`,
+                item.completed ? tw`text-success line-through` : tw`text-black`,
+              ]}
+            >
+              {item.text}
+            </Text>
+          </TouchableOpacity>
           <TouchableOpacity>
-            <Text style={tw`text-dark`}>Excluir</Text>
+            <Icon name="trash-2" color={tw`text-dark`.color} size={20} />
           </TouchableOpacity>
         </Wrapper>
       );

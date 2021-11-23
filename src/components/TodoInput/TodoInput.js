@@ -1,4 +1,5 @@
-import {Text, TextInput, TouchableOpacity, View} from 'react-native';
+import {TextInput, TouchableOpacity, View} from 'react-native';
+import Icon from 'react-native-vector-icons/Feather';
 import tw from 'tw';
 
 const TodoInput = () => (
@@ -8,10 +9,9 @@ const TodoInput = () => (
       placeholder="Adicione uma tarefa"
       placeholderTextColor={tw`text-dark`.color}
     />
-    <TouchableOpacity
-      style={tw`w-14 border-l border-light justify-center items-center`}
-    >
-      <Text style={tw`text-dark`}>></Text>
+    <View style={tw`h-full w-px bg-light`} />
+    <TouchableOpacity style={tw`w-14 justify-center items-center`}>
+      <Icon name="chevron-right" color={tw`text-dark`.color} size={20} />
     </TouchableOpacity>
   </View>
 );
