@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
+    "android:clean": "cd android && ./gradlew clean && cd ..",
     "ios": "react-native run-ios",
     "ios:install": "pod install --project-directory=ios",
     "start": "react-native start",
