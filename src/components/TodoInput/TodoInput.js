@@ -1,10 +1,10 @@
 import {useState} from 'react';
-import {TextInput, TouchableOpacity, View} from 'react-native';
+import {Keyboard, TextInput, TouchableOpacity, View} from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 import tw from 'tw';
 import {useTodos} from '@app/hooks';
 
-const TodoInput = () => {
+const TodoInput = ({style}) => {
   const {createTodo} = useTodos();
 
   const [text, setText] = useState('');
@@ -15,10 +15,11 @@ const TodoInput = () => {
     }
     createTodo(text);
     setText('');
+    Keyboard.dismiss();
   };
 
   return (
-    <View style={tw`flex-row h-14 bg-white rounded-md`}>
+    <View style={[tw`flex-row h-14 bg-white rounded-md`, style]}>
       <TextInput
         style={tw`flex-1 px-4 text-black text-base`}
         placeholder="Adicione uma tarefa"

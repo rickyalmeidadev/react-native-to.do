@@ -36,7 +36,7 @@ const TodosList = () => {
 
   return (
     <FlatList
-      contentContainerStyle={tw`py-6`}
+      contentContainerStyle={tw`pt-10 pb-6`}
       data={todos}
       keyExtractor={item => item.id.toString()}
       ListEmptyComponent={

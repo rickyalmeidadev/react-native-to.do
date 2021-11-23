@@ -1,10 +1,28 @@
-import {createContext, useCallback, useContext, useMemo, useState} from 'react';
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
 import {v4 as uuid} from 'uuid';
+import storage from '@app/utils/storage';
 
 const TodosContext = createContext();
 
 export const TodosProvider = ({children}) => {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(() => {
+    try {
+      const storagedTodos = JSON.parse(storage.getString('todos'));
+      return Array.isArray(storagedTodos) ? storagedTodos : [];
+    } catch {
+      return [];
+    }
+  });
+
+  useEffect(() => {
+    storage.set('todos', JSON.stringify(todos));
+  }, [todos]);
 
   const createTodo = useCallback(text => {
     const todo = {id: uuid(), text, completed: false};
@@ -23,12 +41,8 @@ export const TodosProvider = ({children}) => {
     );
   }, []);
 
-  const total = useMemo(() => todos.length, [todos]);
-
   return (
-    <TodosContext.Provider
-      value={{createTodo, deleteTodo, todos, toggleTodo, total}}
-    >
+    <TodosContext.Provider value={{createTodo, deleteTodo, todos, toggleTodo}}>
       {children}
     </TodosContext.Provider>
   );
