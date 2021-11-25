@@ -1,13 +1,15 @@
 <h1 align="center">to.do</h1>
 
-<figure align="center">
+<div align="center">
   <img 
     src="https://user-images.githubusercontent.com/60705947/143503295-9335b780-8b4f-4fac-88c7-5b689dbae6ee.gif"
     alt="to.do"
     height="633px"
   />
-  <figcaption>to.do app usage example</figcaption>
-</figure>
+</div>
+<div align="center">
+  <em>to.do app usage example</em>
+</div>
 
 <br/>
 
