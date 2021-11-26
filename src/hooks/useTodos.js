@@ -10,8 +10,12 @@ import storage from '@app/utils/storage';
 
 const TodosContext = createContext();
 
-export const TodosProvider = ({children}) => {
+export const TodosProvider = ({children, todos: __TODOS}) => {
   const [todos, setTodos] = useState(() => {
+    if (process.env.NODE_ENV === 'test' && typeof __TODOS !== 'undefined') {
+      return __TODOS;
+    }
+
     try {
       const storagedTodos = JSON.parse(storage.getString('todos'));
       return Array.isArray(storagedTodos) ? storagedTodos : [];

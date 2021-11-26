@@ -9,6 +9,7 @@
     "ios:install": "pod install --project-directory=ios",
     "start": "react-native start",
     "test": "jest",
+    "test:watch": "jest --watch",
     "lint": "eslint ."
   },
   "dependencies": {

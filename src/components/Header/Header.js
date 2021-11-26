@@ -16,7 +16,10 @@ const Header = () => {
           style={tw`flex-row justify-between items-center android:mt-10 ios:mt-8`}
         >
           <View>
-            <Image source={require('@app/assets/images/logo.png')} />
+            <Image
+              accessibilityLabel="to.do logo"
+              source={require('@app/assets/images/logo.png')}
+            />
             <Text style={[tw`text-white text-caption`]}>
               by @rickyalmeidadev
             </Text>
