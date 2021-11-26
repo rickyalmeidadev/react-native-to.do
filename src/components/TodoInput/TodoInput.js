@@ -31,6 +31,7 @@ const TodoInput = ({style}) => {
       />
       <View style={tw`h-full w-px bg-light`} />
       <TouchableOpacity
+        accessibilityLabel="Adicionar"
         style={tw`w-14 justify-center items-center`}
         onPress={onCreate}
       >
