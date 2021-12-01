@@ -2,6 +2,7 @@ import {Alert, FlatList, Text, TouchableOpacity, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/Feather';
 import tw from 'tw';
+import {Checkbox} from '@app/components';
 import {useTodos} from '@app/hooks';
 
 const colors = [tw`text-gradient-from`.color, tw`text-gradient-to`.color];
@@ -52,18 +53,7 @@ const TodosList = () => {
               style={tw`h-full px-6 flex-1 flex-row items-center`}
               onPress={onToggle(item.id)}
             >
-              <View
-                style={[
-                  tw`justify-center items-center w-4 h-4 rounded border border-dark`,
-                  item.completed
-                    ? tw`bg-success border-success`
-                    : tw`border-dark`,
-                ]}
-              >
-                {item.completed && (
-                  <Icon name="check" color={tw`text-white`.color} size={14} />
-                )}
-              </View>
+              <Checkbox checked={item.completed} />
               <Text
                 style={[
                   tw`ml-4 font-medium`,
