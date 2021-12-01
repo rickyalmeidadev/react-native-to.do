@@ -38,7 +38,7 @@ Make sure you have the [React Native development environment](https://reactnativ
 1. Clone this repository:
 
 ```bash
-git clone https://github.com/rickyalmeidadev/react-native-ignite-to.do
+git clone https://github.com/rickyalmeidadev/react-native-to.do
 ```
 
 2. Install packages:
